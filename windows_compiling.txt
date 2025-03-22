@@ -1,0 +1,14 @@
+I made this project using VScode on Windows, hence the lack of makefiles. Here is the generic command i used to build it :
+
+nvcc -g <WITH OR WITHOUT -use_fast_math> -I <VCPKG INCLUDE REPOSITORY PATH> -L <VCPKG LIB REPOSITORY PATH> -lgsl -lgslcblas <CU FILE PATH> -o <OUTPUT EXE FILE PATH>
+
+in my case :
+
+nvcc -g <WITH OR WITHOUT -use_fast_math> -I C:\DEV\vcpkg\installed\x64-windows\include -L C:\DEV\vcpkg\installed\x64-windows\lib -lgsl -lgslcblas C:\Users\t\Desktop\HPC\projet\v3-1.cu -o C:\Users\t\Desktop\HPC\projet\v3-1.exe
+
+Requirements :
+- VCPKG has to be installed
+- GNU Scientific Library (GSL) has to be installed through VCPKG
+- GSL repository has to be added to PATH environment variable
+- NVidia CUDA Toolkit repository containing the nvcc compiler has to be added to PATH environment variable
+- .vscode configuration folder from source folder can be used to facilitate the build
